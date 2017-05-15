@@ -1,0 +1,1 @@
+Had a lot of trouble with "npm start". Something to do with "node" and "nodejs"--very confusing. Now I'm able to see "React simple starter" on the web browser!
