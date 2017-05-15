@@ -1,0 +1,1 @@
+Grider talks about why JSX is great. Easier to read and understand than ES5. 

@@ -1,0 +1,4 @@
+I deleted the src folder and created a new one as instructed in the video, but same text was still showing on web browser.
+
+After trying to figure out what was causing it, I tried stopping the server and then starting it again and it finally showed the changes. Probably something to do 
+with webpack-dev-server. 
