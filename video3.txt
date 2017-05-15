@@ -1,0 +1,3 @@
+Grider talks about js files going through tooling to transpile JSX and ES6 to ES5. Webpack and Babel are used for tooling here.
+
+Also, there is no lecture 2, so no video2.txt. 
