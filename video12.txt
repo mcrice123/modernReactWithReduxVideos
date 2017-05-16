@@ -1,0 +1,4 @@
+Components inside components inside components...
+One component per file. 
+
+Created new files for new components for video app exercise. 

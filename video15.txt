@@ -1,0 +1,1 @@
+ES6 syntax: { Component } and class components "extend Component".

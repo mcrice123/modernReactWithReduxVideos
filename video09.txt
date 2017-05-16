@@ -1,0 +1,1 @@
+How ReactDOM is different from React. Import ReactDOM from 'react-dom'.

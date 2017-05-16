@@ -1,0 +1,1 @@
+Need App rendered as an instance of a class: <App />.

@@ -1,0 +1,9 @@
+ReactDOM.render(<App />, document.querySelector('.container'));
+
+The correct code for rendering a component in a div with class 'container'. 
+
+Also, ES6 syntax.
+
+ES5: const App = function() {}
+ 
+ES6: const App = () => {}
