@@ -1,0 +1,3 @@
+Creating VideoList component and the importance of using "className" and not "class" for html tags. Data passing from state in html tags.
+
+Talk about the long time setState takes to update. 

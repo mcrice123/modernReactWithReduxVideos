@@ -1,0 +1,1 @@
+Difference b/w input tag controlling the value stored in the state and the state controlling its own value. Shows that we can access this value in the state any time. 

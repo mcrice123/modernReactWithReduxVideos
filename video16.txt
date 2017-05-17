@@ -1,0 +1,1 @@
+Added an event handler to SearchBar to show value of input in console.

@@ -1,0 +1,1 @@
+Import YTSearch function from 'youtube-api-search' and now I get search results printed in the console when I run the application. 
