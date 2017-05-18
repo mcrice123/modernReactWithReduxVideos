@@ -1,0 +1,1 @@
+The importance of keys in a list! 'return <VideoListItem key={video.etag} video={video} />'

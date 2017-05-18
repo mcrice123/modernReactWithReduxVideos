@@ -1,0 +1,4 @@
+ES6 string concatenation: const url = `https://www.youtube.com/embed/${videoId}`;
+
+
+Created video detail component with information provided by YouTube.

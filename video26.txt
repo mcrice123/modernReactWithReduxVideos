@@ -1,0 +1,5 @@
+Showing information from YouTube snippet for each video list item. Now the list of videos is showing!
+
+Also, using {video} as parameter instead of props indicates that the one prop passed to the function and called video should be obtained and still called video. 
+
+Plus, can save image url in constant and use constant as src attribute in img tag by surrounding it with curly braces. 

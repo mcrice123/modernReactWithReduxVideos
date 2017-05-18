@@ -1,0 +1,1 @@
+When the parent component can't fetch the data to be passed on fast enough, the child component gets an undefined value and throws an error. Have to check if the props attribute is null before running the rest of the code within the child component. Ex: if (!video) {...}
