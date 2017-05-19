@@ -1,0 +1,1 @@
+Installed lodash with npm and used a debounce function to make sure that the search results don't change any faster than once every 300ms. 

@@ -1,0 +1,1 @@
+A wrap-up of everything about React covered so far: state, import/export, event handlers, passing methods between parent and child components, etc. 

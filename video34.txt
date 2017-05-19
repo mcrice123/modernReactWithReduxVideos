@@ -1,0 +1,1 @@
+A brief word on Redux (how complicated it is).

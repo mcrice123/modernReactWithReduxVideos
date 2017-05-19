@@ -1,0 +1,1 @@
+Moved YouTube search function to its own event handler that SearchBar can call when the input changes. 
