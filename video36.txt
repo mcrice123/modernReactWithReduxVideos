@@ -1,0 +1,6 @@
+Redux = data (what is currently-selected book?)
+React = views (how this information is displayed)
+
+Redux centralizes all data into single object--state. 
+
+Flux -- example counter application.

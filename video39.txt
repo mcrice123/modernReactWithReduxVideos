@@ -1,0 +1,3 @@
+Reducer: function that returns a piece of app state. 
+
+Starting new project by creating a reducer.

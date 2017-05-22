@@ -1,0 +1,1 @@
+In order to pass information returned by reducer to component, have to use container--component with direct connection to state managed by redux. Promoted a component to container.

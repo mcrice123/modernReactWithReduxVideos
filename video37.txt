@@ -1,0 +1,3 @@
+App layout for an application in which the user likes/dislikes a pic and chooses to chat with other users.
+
+There is no lecture 38 (only needed to set up new copy of boilerplate for new project).

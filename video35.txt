@@ -1,0 +1,1 @@
+Grider shows some diagrams to illustrate a simple application and the data and views used in the application. Still asking the question of what redux is. 
