@@ -1,0 +1,3 @@
+Have to check whether activeBook is null or not, or else error will occur if/when a component tries to print one of its attributes. Do the check in the render function of book-detail before the return, so that if the book does not exist yet, it returns early with a specific div. 
+
+Added another attribute to each book object to show how easy it is to add another detail to the book detail. 

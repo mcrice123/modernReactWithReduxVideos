@@ -1,0 +1,1 @@
+Created BookDetail component. It displays correctly, so now we make it a container (since it needs to know the details of the book objects to display them correctly). We import { connect } from react-redux and create the mapStateToProps function. Then we export the connect function call with arguments mapStateToProps and BookDetail. 

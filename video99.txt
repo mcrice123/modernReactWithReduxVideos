@@ -1,0 +1,1 @@
+Intro to Redux Thunk--instead of actions only returning objects, now actions can return functions! Helpful when actions need to return api data and the data doesn't come right away. 

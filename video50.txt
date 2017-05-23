@@ -1,0 +1,11 @@
+REVIEW:
+
+Most important: Redux is in charge of state and state is an object. 
+
+App state != component state. 
+
+App state is formed by reducers, which are tied together by combineReducers. Whatever each reducer returns is represented by a key in this combineReducers. 
+
+Actions must have type and payload. 
+
+Done with Section 4!

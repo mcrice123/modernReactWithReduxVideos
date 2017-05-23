@@ -1,0 +1,13 @@
+Making a new reducer--reducer_active_book.js. 
+
+Reducers get 2 arguments: state and action. State HERE is NOT app state but state that reducer is responsible for. 
+
+Using switch statement in reducer: if type of action is 'BOOK_SELECTED' return action.payload. Otherwise return state. 
+
+ALSO, if state is undefined, setting the argument of state to 'state = null' makes it so that if state is undefined it is set to null instead. 
+
+NEVER MUTATE STATE--always return fresh new state/object. 
+Example: instead of return action.payload...
+			state.title = book.title; return state; // NONO
+
+Now added reducer to reducers/index.js in combineReducers function. 

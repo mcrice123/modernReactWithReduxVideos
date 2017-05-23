@@ -1,0 +1,11 @@
+Right now, state is static. The activebook should be able to change (be dynamic). 
+
+Have to use action creator...
+
+Diagram of the life cycle of an action in Redux. 
+1. Triggered by an event. Event can optionally call Action Creator, a function that returns an object or action. 
+2. Action Creator returns object or action.
+3. Action is automatically sent to all reducers. 
+4. Property on state is set to value returned from the corresponding reducer.
+5. All reducers process action and return new state. Containers are notified about change and re-render with new props. 
+

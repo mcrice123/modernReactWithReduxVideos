@@ -1,0 +1,18 @@
+Container -- where Redux and React meet.
+
+import { connect } from 'react-redux' in the container book-list.js
+
+Instead of exporting default like usual, now we're stating a function in book-list.js called mapStateToProps. It takes the app state as an argument (all data contained in app state). 
+
+"Whatever is returned will show up as props inside of BookList"
+
+This function typically returns an object. Say it returns { asdf: '123' }. Then if it is logged into the console in the render function (this.props.asdf), you'll see '123' in the console. 
+
+So the container is the link b/w Redux and React B/C of this mapStateToProps function!
+
+Since we want to return the list of books (state.books), all we have to do is return { books: state.books } in this function. 
+
+You import { connect } from react-redux.
+The above function takes the state and returns an object to the component BookList. 
+
+When app state changes, container BookList will re-render. 

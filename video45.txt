@@ -1,0 +1,13 @@
+Now we're hooking up an action to the reducers. We created the action selectBook in index.js of actions folder. Now we import selectBook into book-list.js, as well as {bindActionCreators} from 'redux'. 
+
+bindActionCreators makes sure that action flows through all reducers in app. 
+
+In book-list.js, we add another function, now mapDispatchToProps with dispatch as its argument and it returns bindActionCreators({ selectBook: selectBook }, dispatch). The value of selectBook is what's passed in through the import statement at the top of the file. 
+
+Now we add this function to connect function arguments: export default connect(mapStateToProps, mapDispatchToProps)(BookList).
+
+So bindActionCreators paired with dispatch is used to make sure the action flows through all reducers. dispatch is referred to as a 'funnel'. 
+
+Just as mapStateToProps returns what becomes props on the container, so what mapDispatchToProps returns is available as props on container. So this.props.selectBooks calls the action creator.
+
+The reason why we can't just call selectBook in a component is b/c we want what it returns to flow through ALL reducers, not just the component. We'll find out more about what this entails later. 

@@ -1,0 +1,9 @@
+A little review about Redux:
+
+First start out with a reducer function which returns an object (in this case, it was an array of books). 
+
+Add this reducer function to the combineReducers function in index.js of the reducers folder. The reducer adds a key to the global app state and its value is what is returned from the reducer (the object). 
+
+Promote a component to container by adding import statement for {connect} from react-redux and define mapStateToProps function. Then export connect function, so that it hooks together the mapStateToProps function and the BookList component. 
+
+When that component/container is used, it shows what it returns using the above process. 

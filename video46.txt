@@ -1,0 +1,5 @@
+Found an error. I forgot to export the action XD
+
+I'm able to connect action creator to container. 
+
+Each action creator has a type and a payload. The type is a string in uppercaps. Payload is a book. 
