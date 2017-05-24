@@ -1,0 +1,5 @@
+Now talking about Firebase.
+
+Use Firebase with Redux, NOT Firebase with ReactFire with React (Redux gets circumvented).
+
+Only started video.
