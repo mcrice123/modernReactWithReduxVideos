@@ -1,0 +1,14 @@
+Modals in React and Redux
+
+modal: a window that pops up to the user (to get user's attention)
+
+difficult to build in React
+
+3-step process:
+
+One source of problems with modals: z-index styling. Modal needs to be on top of everything else! Becomes a problem when modal is child component at bottom of tree.
+
+Another source of problems: if modal's parent is the body and the child component tries to access Provider tag inside a different hierarchy rooted in the body, it can't. 
+
+Have provider as child of modal/parent of child component as well as provider for different hierarchy.
+

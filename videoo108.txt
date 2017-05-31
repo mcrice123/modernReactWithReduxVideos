@@ -1,0 +1,22 @@
+import { Router, Route, browserHistory } from 'react-router';
+ReactDOM.render(
+	<Provider store={createStoreWithMiddleware(reducers)}>
+		<Router history={browserHistory}>
+			<Route path="/" component={App}>
+				<Route path="users" component={UsersList} />
+			</Route>
+		</Router>
+	</Provider>
+	, document.querySelector.('.container'));
+
+Difference b/c hashhistory and browserHistory.
+Both say which part of url to look at to decide on what components show on the screen.
+HashHistory says to look for the '#' (hash) and look to the right for that part. 
+
+
+Why use one over the other? 
+	1. Pretty URLS. HashHistory has the 'ugly' hash. Inclination towards browserHistory b/c of lack of hash. 
+
+	2. "Cannot GET /users": with browserHistory, you can navigate to a specific page through the clicked links, but if you try to access specific path through url or even refresh the page after getting to it through links, it returns this message. This happens b/c NO NEW REQUEST to the server is made while navigating in the app until the refresh happens (and this info isn't in there correctly???). All of this is handled by webpack dev server, but becomes a problem in production.
+	SOLUTION SHOWN...index.html ALWAYS returned and THEN ReactRouter decides which components to render.
+

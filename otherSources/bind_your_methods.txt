@@ -1,0 +1,29 @@
+My reading from this web site: http://reactkungfu.com/2015/07/why-and-how-to-bind-methods-in-your-react-component-classes/
+
+I really needed to read up on binding. Not only is it a React thing, it's also a JavaScript thing (apparently, React IS JavaScript...). 
+
+Important notes: 
+
+* Context of a JavaScript function is defined when calling it, not when defining it (this is late binding). 
+
+* 4 patterns of invoking functions that defines functions' context:
+
+	* Function invocation pattern
+		- The most straightforward, direct way of calling a function.
+		- Example: var func = function() { ... }; ... func()
+		- Context (this) is set to global variable of an environment in which JS operates..."window" in browsers.
+		- An INTERESTING example of how a function assigned to a variable in an object still has context of "window": 
+			var unicorns = { func: function() { ... }}; var fun = unicorns.func; fun(); 
+			// even though function is defined in unicorns, it's called outside of unicorns
+			// context binding is determinded by HOW you CALL the function!
+
+	* Method invocation pattern
+		- This involves calling a function that's defined within an object, similar to previous example, but actually calling it directly from the object. 
+		- Example: var frog = { RUN_SOUND: "POP!!", run: function() { return this.RUN_SOUND; } }; 
+			frog.run(); // returns "POP!!" since this points to the 'frog' object (aka, context is the 'frog' object).
+			var runningFun = frog.run;
+			runningFun(); // returns "undefined" since this points to window.
+
+	* Constructor invocation pattern
+
+	* Apply invocation pattern

@@ -1,0 +1,5 @@
+4 most common errors in React/Redux:
+	1. Failing to export results in error message: "React.createElement: type should not be null, undefined, boolean, or number..." CHECK YOUR EXPORT STATEMENTS.
+	2. Failing to import correctly (pay attention to curly braces), particularly in reducers, results in nothing showing up and no error messages. CHECK TO SEE IF IMPORTS ARE UNDEFINED--POSSIBLY CAUSED BY INCORRECT IMPORT STATEMENTS. 
+	3. Error occurs in promise ("Uncaught (in promise) TypeError:..."). CHECK PROMISES.
+	4. Trying to render objects ("Uncaught (in promise) Error: Objects are not valid as React child..."). REACT CANNOT RENDER OBJECTS.
