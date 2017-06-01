@@ -5,6 +5,7 @@ I really needed to read up on binding. Not only is it a React thing, it's also a
 Important notes: 
 
 * Context of a JavaScript function is defined when calling it, not when defining it (this is late binding). 
+* Functions are OBJECTS in JavaScript (different from many other languages!).
 
 * 4 patterns of invoking functions that defines functions' context:
 
@@ -16,14 +17,125 @@ Important notes:
 			var unicorns = { func: function() { ... }}; var fun = unicorns.func; fun(); 
 			// even though function is defined in unicorns, it's called outside of unicorns
 			// context binding is determinded by HOW you CALL the function!
+		- NOT so similar to behavior of most programming languages!
 
 	* Method invocation pattern
 		- This involves calling a function that's defined within an object, similar to previous example, but actually calling it directly from the object. 
 		- Example: var frog = { RUN_SOUND: "POP!!", run: function() { return this.RUN_SOUND; } }; 
 			frog.run(); // returns "POP!!" since this points to the 'frog' object (aka, context is the 'frog' object).
 			var runningFun = frog.run;
-			runningFun(); // returns "undefined" since this points to window.
+			runningFun(); // returns "undefined" since this points to window. (no RUNNING_SOUND defined in window)
+		- Nested objects: most nested object set as context of function call. 
+		- Example: var foo = { bar: { func: function() { ... }}}; foo.bar.func(); 
+					// this will point to 'bar'
+		- Similar to behavior of most programming languages!
+		- Works if you're looking to have JUST ONE object with context defined properly.
 
 	* Constructor invocation pattern
+		- Functions designed to be used with "new" are constructors (begin with uppercase letter).
+		- Example: function Wizard() { this.castSpell = function() { return "KABOOM"; }}
+					var merlin = new Wizard(); // this is set to empty object{}. Returns
+												// 'this' implicitly. 
+					merlin.castSpell(); // returns "KABOOM";
+			// If you call 'Wizard()' directly like so, same as function invocation 
+			// pattern (affects window), but it's intended to be called with 'new' 
+			// operator. When done so, this is a constructor invocation pattern.
+		- Two results of 'new' operator: 
+			1. 'this' context points to empty object.
+			2. If 'return' not specified or function returns non-object value, 'this' will get returned. 
 
 	* Apply invocation pattern
+		- You can call a function with context different from that of implicit call!
+		- Functions provide two methods of doing this:
+			1. 'call' -- (context, argumentsForFunction...)
+			2. 'apply' -- (context, arrayOfArgumentsForFunction)
+		- Example: function addAndSetX(a, b) { this.x += a + b; }
+					var obj1 = { x: 1, y: 2 };
+					addAndSetX.call(obj1, 1, 1); // this = obj1
+							// obj1 after call = { x:3, y: 2 }
+					// It is the same as: addAndSetX.apply(obj1, [1, 1]);
+		- This is handy if you need to call a function from different context.
+		- Not so helpful with async callback, b/c binding is coupled with function CALL, not definition/instantiation. For this, you need a BOUNDED FUNCTION...
+
+	Summary of invocation patterns: 
+		(Implicit setting of function call context)
+		* Function:
+			var definedFunc = function() { ... }; definedFunc();
+		* Method:
+			var func = object.definedFunc; func();
+		* Constructor:
+			var func = new DefinedObjectFunction(); func.callInsideFunc();
+		(NOT IMPLICIT: You can actually change function call context to something else!)
+		* Apply: 
+			function func(blah1, blah2, ...) { ...} 
+			var object = { ... }; 
+			func.call(object, anyVariable1, anyVariable2, ...);
+			// OR
+			func.apply(object, [anyVariable1, anyVariable2, ...]);
+
+* Binding Functions
+	* Bounded functions are BOUNDED to a given context (context is always the same, no matter HOW it's called...except with 'new' operator, which ALWAYS returns new context).
+
+	* 'bind' method is used -- (context, arg1, arg2, ...)
+
+	* Example: function add(x, y) { this.result += x + y; }
+				var computation1 ={ result: 0 };
+				var boundedAdd = add.bind(computation1); // boundedAdd bound to
+															// computation1
+
+				boundedAdd(1, 2); // 'this' => 'computation1'
+									// computation1 after call: { result: 3 }
+
+				var boundedAddPlusTwo = add.bind(computation1, 2); 
+				boundedAddPlusTwo(4); // 'this' => 'computation1'
+										// computation1 after call: { result: 9 }
+				
+				// YOU CAN'T EVEN CHANGE CONTEXT OF BOUNDED FUNCTION VIA 'call' OR 'apply'
+
+				// Example of method invocation not changing context of bounded function
+				var obj = { boundedPlusTwo: boundedAddPlusTwo }; // function with method 
+																// set to previous function
+				obj.boundedPlusTwo(4); // 'this' => 'computation1'
+										// even though method is called on 'obj' (method 
+										// invocation), context doesn't change!
+										// computation1 after call: { result: 15 }
+
+				// Example of 'call' not changing context of bounded function
+				var computation2 = { result: 0 };
+				boundedAdd.call(computation2, 1, 2); // 'this' => 'computation1'
+													// even though context passed to call 
+													// is 'computation2', context doesn't 
+													// change!
+													// computation1 after call: { result: 18 }
+
+NOW FOR SOME REACT!
+
+Function context calls in ES2015/React classes follow same principles as JavaScript. So...
+
+	class Foo {           // ES2015
+		constructor() { 
+			this.x = 2; 
+			this.y = 4;
+		}
+		bar() { ... }
+		baz() { ... }
+	}
+...is about the same as...
+	function Foo() {      // Vanilla JavaScript
+		this.x = 2;
+		this.y = 4;
+
+		this.bar = function() { ... };
+		this.baz = function() { ... };
+	}
+
+React.createClass : oldest component class syntax; performs 'auto-binding' under the hood. 
+	- This is great b/c all methods you define in object passed to React.createClass is automatically bound to component instance -- you can always use setState, access props and state, etc from these methods. 
+	- NOT so great b/c your ability to set context yourself is limited. Only a concern in more sophisticated codebases--may not need this 99% of the time. 
+
+ECMAScript 2015 Classes:
+You HAVE to bind your methods MANUALLY. 
+	* Only need to gind event handlers and functions passed down as properties (aka callbacks). 
+	* Functions like setState and forceUpdate are inherited b/c the component is instanstantiated from component class (while rendering) through constructor invocation pattern (new Component(...)) and component classes inherit from React.Component, where these functions are defined.
+
+
