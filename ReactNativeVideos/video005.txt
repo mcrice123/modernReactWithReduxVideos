@@ -1,0 +1,3 @@
+Setup directions for OSX continued.
+
+Homebrew, Node, npm, watchman, RN CLI.

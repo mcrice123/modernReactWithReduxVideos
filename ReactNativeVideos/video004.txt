@@ -1,0 +1,9 @@
+Setup directions for OSX.
+
+Dependencies:
+	XCode: build apps and store on mobile device
+	HomeBrew: Used to install node
+	Node/NPM: Node runs JS outside of browser. NPM is used for installing and managing dependencies. Node and NPM come together.
+	watchman: Watches files on the hard drive and waits for them to change.
+	RN CLI: React Native Command Line Interface. Used to generate new React Native projects.
+

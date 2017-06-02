@@ -1,0 +1,7 @@
+const App = () => {
+  return(
+    <Text>Some Text</Text>
+  );
+};
+
+Inputted the above code in the index.ios.js file to create a component. Talk about JSX and Babel.

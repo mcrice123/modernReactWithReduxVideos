@@ -1,0 +1,3 @@
+ReactNative.AppRegistry.registerComponent('albums', () => App);
+
+Added the above line of text at end of index.ios.js to render the component App to device. Note how the fat arrow function has now {}'s. It just returns App, no {}'s required. 

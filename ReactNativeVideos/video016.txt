@@ -1,0 +1,11 @@
+Differences b/w React and ReactNative
+
+React
+* Knows how a component should behave
+* Knows how to take a bunch of components and make them work together
+
+React Native
+* KNows how to take the output from a component and place it on the screen.
+* Provides default core components (image, text).
+
+Review on import statements (ES6)

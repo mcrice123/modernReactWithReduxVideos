@@ -1,0 +1,1 @@
+Opened project directory and looking at everything inside it. Deleted contents in files index.android.js and index.ios.js. These are two IMPORTANT files. If making app for android, use former. If making app for IOS, use latter. 
