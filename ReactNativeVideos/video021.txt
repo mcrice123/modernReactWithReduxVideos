@@ -1,0 +1,5 @@
+Create src folder. Create components folder in src. Create header.js in components folder. 
+
+Put in code for header in header.js.
+
+Export statement at end of header.js.

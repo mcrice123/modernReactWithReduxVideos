@@ -1,0 +1,5 @@
+Intro to class components.
+
+Plan: AlbumList is going to make data requests, so need to refactor it to a class component.
+
+AlbumList refactored.

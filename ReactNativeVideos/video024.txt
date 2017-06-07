@@ -1,0 +1,11 @@
+More styles...
+
+Intro to View tags (must import from react-native). Used viewStyle to add background color.
+
+const {textStyle, viewStyle } = styles;
+
+<View style={viewStyle}>
+	<Text style={textStyle}>...</Text>
+</View>
+
+const styles = { ... }

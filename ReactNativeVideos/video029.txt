@@ -1,0 +1,1 @@
+Create AlbumList component. Import it into index.android.js. Nest Header and AlbumList tags in single View tags so that only one element is being returned.

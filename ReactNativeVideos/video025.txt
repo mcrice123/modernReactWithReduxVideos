@@ -1,0 +1,10 @@
+Intro to Flexbox.
+
+justifyContent: 'flex-end'
+	-- used to push our text to the bottom
+justifyContent: 'center'
+	-- used to push our text to middle vertically, but still appears on left
+
+alignItems: 'center' 
+	-- for pushing to horizontal center (or 'flex-end' for pushing to the right)
+

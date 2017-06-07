@@ -1,0 +1,1 @@
+Changed header so that it's reusable: Using props in header.js to pass text from app to header. App passes the desired text and header shows the text passed to it. 

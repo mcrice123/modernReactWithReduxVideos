@@ -1,0 +1,6 @@
+Intro to LifeCycle Methods.
+
+componentWillMount: this method will be called for us when the component is about to be rendered to the screen.
+
+Intro to React Native Debugger (where console.log statements appear). Debugger statements can be used with this to find errors in code. 
+

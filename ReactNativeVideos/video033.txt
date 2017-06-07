@@ -1,0 +1,7 @@
+Installed axios via npm. 
+
+Import axios into AlbumList. 
+
+IMPORTANT: type in terminal 'npm cache clean'. Here I got a red error message b/c of the axios import statement, even though it's correct. Found solution on internet that I needed to restart the emulator, terminate the server (react-native start), and do this cache clean. I followed these instructions and restarted everything and it works! Everything appears as expected. 
+
+Plan for making app work...timeline doesn't line up b/w response to data fetch and rendering of components. 

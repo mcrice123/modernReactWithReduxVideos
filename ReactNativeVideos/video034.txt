@@ -1,0 +1,3 @@
+Component Level State.
+
+Initializing the state (state = { albums: [] };) and updating the state (setState({ ... })).

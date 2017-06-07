@@ -1,0 +1,1 @@
+Talk about app in detail. Plan is to use API to get data about albums. Make AlbumList and AlbumDetail components is next.

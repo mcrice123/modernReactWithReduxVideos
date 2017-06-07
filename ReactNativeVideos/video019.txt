@@ -1,0 +1,1 @@
+FINALLY got app to run in emulator!

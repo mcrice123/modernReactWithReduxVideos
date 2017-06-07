@@ -1,0 +1,3 @@
+Import header component into index.android.js.
+
+Replace Text tag with Header tag. Delete Text import. Refresh. Header works!
